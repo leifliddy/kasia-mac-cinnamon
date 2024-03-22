@@ -1,0 +1,34 @@
+alias gospec='cd ~/rpmbuild/SPECS'
+alias gosource='cd ~/rpmbuild/SOURCES'
+alias gobuild='cd ~/rpmbuild/BUILD'
+alias gobuildroot='cd ~/rpmbuild/BUILDROOT'
+alias gorpm='cd ~/rpmbuild/RPMS'
+alias gosrpm='cd ~/rpmbuild/SRPMS'
+alias repolist='dnf repolist'
+alias repolistall='dnf repolist --all'
+
+
+dep() {
+   dnf builddep $1
+}
+
+bp() {
+  rpmbuild -bp $1
+}
+
+bb() {
+  rpmbuild -bb $1
+}
+
+ba() {
+  rpmbuild -ba $1
+}
+
+enablerepo() {
+  dnf config-manager --enable $1
+}
+
+disablerepo() {
+  dnf config-manager --disable $1
+}
+
